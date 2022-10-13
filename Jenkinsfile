@@ -16,7 +16,13 @@ pipeline {
         
         stage('print') {
             steps {
-                sh "echo test done.."
+                sh "echo test"
+            }
+        }
+        
+        stage('print1') {
+            steps {
+                sh "echo test 1"
             }
         }
         
