@@ -10,7 +10,10 @@ pipeline {
                                 choice(
                                    choices: ["dev", "uat", "prod"],
                                    name: "ENVIRONMENT"
-                                   )
+                                   ),
+                                string(
+                                    defaultValue: "training",
+                                    name: "STRING")
                             ])
                        ])
                     }
@@ -18,8 +21,10 @@ pipeline {
          } 
          stage('print parameter') {
               steps {
-                 echo "$ENVIRONMENT"
+                 echo "Choice parameter is $ENVIRONMENT"
+                 echo "String parameter is $STRING"
                  }
           }
     }
 }
+
