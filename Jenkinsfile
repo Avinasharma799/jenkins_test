@@ -1,5 +1,8 @@
 pipeline {
    agent any
+   triggers {
+       pollSCM("*/2 * * * *")
+    }
    
    stages {
        stage('Setup Parameter') {
@@ -27,4 +30,3 @@ pipeline {
           }
     }
 }
-
